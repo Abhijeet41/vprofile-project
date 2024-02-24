@@ -1,7 +1,7 @@
-#FROM openjdk:11 AS BUILD_IMAGE
-#RUN apt update && apt install maven -y
-#RUN git clone https://github.com/Abhijeet41/vprofile-project.git
-#RUN cd vprofile-project && git checkout docker && mvn install
+FROM openjdk:11 AS BUILD_IMAGE
+RUN apt update && apt install maven -y
+RUN git clone https://github.com/Abhijeet41/vprofile-project.git
+RUN cd vprofile-project && git checkout docker && mvn install
 
 FROM tomcat:8-jre11
 LABEL "Project" = "Vprofile"
